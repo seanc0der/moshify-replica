@@ -1,8 +1,10 @@
 :root {
 	--color-primary: #2584ff;
+	--color-primary-medium: #126de4;
+	--color-primary-dark: #1b0760;
 	--color-secondary: #00d9ff;
+	--color-secondary-medium: #03c2e3;
 	--color-accent: #ff3400;
-	--color-headings: #1b0760;
 	--color-body: #918ca4;
 }
 
@@ -13,16 +15,16 @@ html {
 }
 
 body {
+	color: var(--color-body);
 	font-family: "Inter", Arial, Helvetica, sans-serif;
 	font-size: 2.4rem;
-	color: var(--color-body);
 	line-height: 1.5;
 }
 
 h1,
 h2,
 h3 {
-	color: var(--color-headings);
+	color: var(--color-primary-dark);
 	margin-bottom: 1rem;
 }
 
@@ -63,10 +65,10 @@ a {
 }
 
 .arrow-link {
-	text-transform: uppercase;
-	font-size: 2rem;
 	color: var(--color-accent);
-	font-weight: 700;
+	font-size: 2rem;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .arrow-link::after {
@@ -83,5 +85,60 @@ a {
 @media screen and (min-width: 1024px) {
 	.arrow-link {
 		font-size: 1.5rem;
+	}
+}
+
+/* Badge */
+
+body {
+	padding: 2rem;
+}
+
+.badge {
+	border-radius: 20px;
+	font-size: 2rem;
+	font-weight: 600;
+	font-weight: bold;
+	padding: 0.8rem 2.2rem;
+	white-space: nowrap;
+}
+
+.badge--primary,
+.badge--secondary,
+.badge--secondary-medium {
+	color: white;
+}
+
+.badge--primary {
+	background-color: var(--color-primary-medium);
+}
+
+.badge--secondary {
+	background-color: var(--color-secondary);
+}
+
+.badge--secondary-medium {
+	background-color: var(--color-secondary-medium);
+	opacity: 0.502;
+}
+
+.badge--small {
+	border-radius: 16px;
+	font-size: 1.6rem;
+	padding: 0.6rem 1.3rem;
+	text-transform: uppercase;
+}
+
+@media screen and (min-width: 1024px) {
+	.badge {
+		border-radius: 17px;
+		font-size: 1.5rem;
+		padding: 0.8rem 1.5rem;
+	}
+
+	.badge--small {
+		border-radius: 15px;
+		font-size: 1.2rem;
+		padding: 0.8rem 1.2rem;
 	}
 }
