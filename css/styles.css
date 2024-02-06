@@ -224,6 +224,7 @@ body {
 	padding: 2rem 3rem;
 	text-transform: uppercase;
 	white-space: nowrap;
+	margin: 1rem 0;
 }
 
 .btn--primary {
