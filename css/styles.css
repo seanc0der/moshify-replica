@@ -3,7 +3,7 @@
 	--color-primary-medium: #126de4;
 	--color-primary-dark: #1b0760;
 	--color-secondary: #00d9ff;
-	--color-secondary-medium: #03c2e3;
+	--color-secondary-medium: #02cdf1;
 	--color-accent: #ff3400;
 	--color-body: #918ca4;
 	--color-border: #ccc;
@@ -108,23 +108,19 @@ a {
 	white-space: nowrap;
 }
 
-.badge--primary,
-.badge--secondary,
-.badge--secondary-medium {
-	color: white;
-}
-
 .badge--primary {
 	background-color: var(--color-primary-medium);
+	color: white;
 }
 
 .badge--secondary {
 	background-color: var(--color-secondary);
+	color: white;
 }
 
 .badge--secondary-medium {
 	background-color: var(--color-secondary-medium);
-	opacity: 0.502;
+	color: white;
 }
 
 .badge--small {
@@ -243,13 +239,13 @@ a {
 }
 
 .btn--secondary {
-	background-color: var(--color-secondary-medium);
+	background-color: var(--color-secondary);
 	color: white;
 }
 
 .btn--secondary:hover,
 .btn--secondary:focus {
-	background-color: var(--color-secondary);
+	background-color: var(--color-secondary-medium);
 }
 
 .btn--accent {
@@ -341,4 +337,75 @@ a {
 .card--secondary .card__header {
 	background-color: var(--color-secondary);
 	color: white;
+}
+
+/* Plans */
+
+.plan__name {
+	color: inherit;
+	font-size: 2.4rem;
+	font-weight: 600;
+	margin: 0;
+}
+
+.plan__price {
+	font-size: 6rem;
+}
+
+.plan__billing-cycle {
+	font-size: 2.4rem;
+	font-weight: 300;
+	margin-right: 1rem;
+	opacity: 0.8;
+	vertical-align: 0.5rem;
+}
+
+.plan .badge--small {
+	vertical-align: 0.8rem;
+}
+
+.plan__description {
+	display: block;
+	font-size: 2rem;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+.plan .list__item {
+	font-weight: 600;
+	margin-bottom: 2rem;
+}
+
+.plan .btn {
+	margin-bottom: 2rem;
+}
+
+.plan--popular .card__header {
+	position: relative;
+}
+
+.plan--popular .card__header::before {
+	content: url(../images/popular.svg);
+	position: absolute;
+	width: 37px;
+	top: -6px;
+	right: 5%;
+}
+
+@media screen and (min-width: 1024px) {
+	.plan__name {
+		font-size: 1.5rem;
+	}
+
+	.plan__price {
+		font-size: 5rem;
+	}
+
+	.plan__billing-cycle {
+		font-size: 1.6rem;
+	}
+
+	.plan__description {
+		font-size: 1.7rem;
+	}
 }
