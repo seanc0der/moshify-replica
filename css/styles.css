@@ -6,6 +6,8 @@
 	--color-secondary-medium: #03c2e3;
 	--color-accent: #ff3400;
 	--color-body: #918ca4;
+	--color-border: #ccc;
+	--border-radius: 40px;
 }
 
 *,
@@ -96,10 +98,6 @@ a {
 }
 
 /* Badge */
-
-body {
-	padding: 2rem;
-}
 
 .badge {
 	border-radius: 20px;
@@ -213,7 +211,7 @@ body {
 
 .btn {
 	align-items: center;
-	border-radius: 40px;
+	border-radius: var(--border-radius);
 	border: 0;
 	cursor: pointer;
 	display: inline-flex;
@@ -261,7 +259,7 @@ body {
 
 .btn--accent:hover,
 .btn--accent:focus {
-	background-color: #ff6943;
+	background-color: #ee532c;
 }
 
 .btn--medium {
@@ -285,8 +283,8 @@ body {
 /* Inputs */
 
 .input {
-	border-radius: 40px;
-	border: 1px solid #ccc;
+	border-radius: var(--border-radius);
+	border: 1px solid var(--color-border);
 	color: var(--color-primary-dark);
 	font-size: 2rem;
 	outline: 0;
@@ -294,11 +292,53 @@ body {
 }
 
 .input::placeholder {
-	color: #ccc;
+	color: #cdcbd7;
+}
+
+.input-group {
+	border: 1px solid var(--color-border);
+	border-radius: var(--border-radius);
+	display: flex;
+}
+
+.input-group .input {
+	border: 0;
+	flex-grow: 1;
+}
+
+.input-group .input:last-child {
+	padding: 2rem;
+}
+
+.input-group .btn {
+	margin: 4px;
 }
 
 @media screen and (min-width: 1024px) {
 	.input {
 		font-size: 1.5rem;
 	}
+}
+
+/* Cards */
+
+.card {
+	border-radius: 7px;
+	box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
+.card__header,
+.card__body {
+	padding: 2.5rem 3.5rem;
+}
+
+.card--primary .card__header {
+	background-color: var(--color-primary);
+	color: white;
+}
+
+.card--secondary .card__header {
+	background-color: var(--color-secondary);
+	color: white;
 }
