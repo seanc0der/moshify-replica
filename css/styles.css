@@ -6,6 +6,7 @@
 	--color-secondary-medium: #02cdf1;
 	--color-accent: #ff3400;
 	--color-body: #918ca4;
+	--color-body-dark: #5c5577;
 	--color-border: #ccc;
 	--border-radius: 40px;
 }
@@ -427,4 +428,66 @@ a {
 
 .media__title {
 	margin-top: 0;
+	font-weight: 600;
+}
+
+/* Quotes */
+
+.quote {
+	color: var(--color-body-dark);
+	font-size: 3rem;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 1.3;
+}
+
+.quote__text::before {
+	content: open-quote;
+}
+
+.quote__text::after {
+	content: close-quote;
+}
+
+.quote__author-container {
+	gap: 1.5rem;
+}
+
+.quote__author-icon {
+	position: relative;
+	width: 50px;
+	top: -1.5rem;
+}
+
+.quote__author {
+	font-size: 3rem;
+	font-style: normal;
+	margin-bottom: 0;
+}
+
+.quote__author-company {
+	color: var(--color-primary-dark);
+	font-size: 2rem;
+	font-style: normal;
+	font-weight: 500;
+	opacity: 0.4;
+}
+
+@media screen and (min-width: 1024px) {
+	.quote {
+		font-size: 2.4rem;
+		line-height: 1.4;
+	}
+
+	.quote__author-icon {
+		top: -1.8rem;
+	}
+
+	.quote__author {
+		font-size: 2.4rem;
+	}
+
+	.quote__author-company {
+		font-size: 1.6rem;
+	}
 }
