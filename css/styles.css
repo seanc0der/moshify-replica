@@ -712,7 +712,8 @@ a {
 
 .block {
 	--padding-vertical: 7rem;
-	padding: var(--padding-vertical) 3rem;
+	padding: var(--padding-vertical) 3rem calc(var(--padding-vertical) + 2rem)
+		3rem;
 }
 
 .block--dark {
