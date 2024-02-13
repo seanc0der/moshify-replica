@@ -674,6 +674,10 @@ a {
 
 /* Collapsibiles */
 
+.collapsible__toggler {
+	cursor: pointer;
+}
+
 .collapsible__header {
 	align-items: center;
 	display: flex;
@@ -692,7 +696,7 @@ a {
 	transition: transform 0.3s;
 }
 
-.collapsible__body {
+.collapsible__content {
 	max-height: 0;
 	opacity: 0;
 	overflow: hidden;
@@ -703,7 +707,7 @@ a {
 	transform: rotate(0);
 }
 
-.collapsible--expanded .collapsible__body {
+.collapsible--expanded .collapsible__content {
 	max-height: 100vh;
 	opacity: 1;
 }
@@ -764,4 +768,81 @@ a {
 .container {
 	max-width: 1140px;
 	margin: 0 auto;
+}
+
+/* Nav */
+
+.nav {
+	background-color: black;
+	padding: 2rem 1rem;
+}
+
+.nav__container {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.nav__logo {
+	transform: translateY(6px);
+}
+
+.nav__toggler {
+	opacity: 0.5;
+	margin-right: 1.8rem;
+	transition: opacity 0.2s box-shadow 0.2s;
+}
+
+.nav.collapsible--expanded .nav__toggler {
+	border-radius: 4px;
+	box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4);
+	opacity: 1;
+}
+
+.nav__list {
+	margin: 0;
+	padding: 0 2rem;
+	width: 100%;
+}
+
+.nav__list-item {
+	border-bottom: 1px solid #222;
+	padding: 1rem 0;
+}
+
+.nav__list-item:last-child {
+	border: 0;
+}
+
+.nav__list-item > a {
+	color: #d2e0db;
+	transition: color 0.2s;
+}
+
+.nav__list-item > a:hover,
+.nav__list-item > a:focus {
+	color: white;
+}
+
+@media screen and (min-width: 768px) {
+	.nav {
+		font-size: 1.6rem;
+	}
+
+	.nav__toggler {
+		display: none;
+	}
+
+	.nav__list {
+		display: flex;
+		gap: 4rem;
+		max-height: 100%;
+		opacity: 1;
+		width: auto;
+	}
+
+	.nav__list-item {
+		border: 0;
+	}
 }
