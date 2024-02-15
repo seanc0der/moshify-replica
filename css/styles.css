@@ -221,6 +221,7 @@ a {
 	gap: 10px;
 	justify-content: center;
 	margin: 1rem 0;
+	outline: 0;
 	padding: 2rem 3rem;
 	text-transform: uppercase;
 	white-space: nowrap;
@@ -290,10 +291,12 @@ a {
 	font-size: 2rem;
 	outline: 0;
 	padding: 2.5rem 3.5rem;
+	width: 100%;
 }
 
 .input::placeholder {
 	color: #cdcbd7;
+	font-weight: 300;
 }
 
 .input-group {
@@ -712,7 +715,7 @@ a {
 
 .block {
 	--padding-vertical: 7rem;
-	padding: var(--padding-vertical) 3rem calc(var(--padding-vertical) + 2rem)
+	padding: var(--padding-vertical) 2rem calc(var(--padding-vertical) + 2rem)
 		3rem;
 }
 
@@ -723,6 +726,10 @@ a {
 
 .block__header {
 	text-align: center;
+}
+
+.block__heading {
+	margin-bottom: 3rem;
 }
 
 .block__heading {
@@ -873,5 +880,63 @@ a {
 @media screen and (min-width: 1024px) {
 	.hero {
 		padding-top: 0;
+	}
+}
+
+/* Block-domain */
+
+.block-domain {
+	font-size: 2.2rem;
+}
+
+.block-domain__search {
+	border: 0;
+	box-shadow: 0 0 30px 15px rgba(0, 0, 0, 0.1);
+	margin: 4rem auto;
+	max-width: 690px;
+}
+
+.block-domain__search .input {
+	padding-left: 2rem;
+	padding-right: 1rem;
+}
+
+.block-domain__prices {
+	align-items: center;
+	display: grid;
+	font-size: 2rem;
+	font-weight: 600;
+	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+	justify-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 700px;
+	white-space: nowrap;
+}
+
+.block-domain__prices > .list__item {
+	padding: 2rem 0;
+}
+
+@media screen and (min-width: 768px) {
+	.block-domain__search .input {
+		padding-left: 3.5rem;
+		padding-right: 3.5rem;
+	}
+
+	.block-domain__prices {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.block-domain {
+		font-size: 1.8rem;
+	}
+
+	.block-domain__prices {
+		font-size: 1.5rem;
+		grid-template-columns: repeat(6, 1fr);
+		max-width: 750px;
 	}
 }
