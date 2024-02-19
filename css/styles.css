@@ -334,7 +334,7 @@ a {
 
 .card__header,
 .card__body {
-	padding: 2.5rem 3.5rem;
+	padding: 2.5rem 3rem;
 }
 
 .card--primary .card__header {
@@ -348,6 +348,29 @@ a {
 }
 
 /* Plans */
+
+.plan {
+	max-width: 500px;
+	transition: transform 0.2s ease-out;
+	width: 100%;
+}
+
+.plan:hover,
+.plan:focus {
+	transform: scale(1.05);
+}
+
+.plan--popular .card__header {
+	position: relative;
+}
+
+.plan--popular .card__header::before {
+	content: url(../images/popular.svg);
+	position: absolute;
+	right: 5%;
+	top: -6px;
+	width: 37px;
+}
 
 .plan__name {
 	color: inherit;
@@ -377,30 +400,38 @@ a {
 	font-size: 2rem;
 	font-weight: 300;
 	letter-spacing: 1px;
+	white-space: nowrap;
+}
+
+.plan .card__body {
+	--height-min: 45rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: var(--height-min);
 }
 
 .plan .list__item {
-	font-weight: 600;
-	margin-bottom: 2rem;
+	font-weight: 500;
+	margin-bottom: 1.5rem;
 }
 
-.plan .btn {
-	margin-bottom: 2rem;
-}
+@media screen and (min-width: 768px) {
+	.plan--popular {
+		transform: scale(1.05);
+	}
 
-.plan--popular .card__header {
-	position: relative;
-}
-
-.plan--popular .card__header::before {
-	content: url(../images/popular.svg);
-	position: absolute;
-	width: 37px;
-	top: -6px;
-	right: 5%;
+	.plan--popular:hover,
+	.plan--popular:focus {
+		transform: scale(1.1);
+	}
 }
 
 @media screen and (min-width: 1024px) {
+	.plan--popular .card__header {
+		padding-top: 5rem;
+	}
+
 	.plan__name {
 		font-size: 1.5rem;
 	}
@@ -415,6 +446,10 @@ a {
 
 	.plan__description {
 		font-size: 1.7rem;
+	}
+
+	.plan .card__body {
+		min-height: calc(var(--height-min) - 8rem);
 	}
 }
 
@@ -716,7 +751,7 @@ a {
 .block {
 	--padding-vertical: 7rem;
 	padding: var(--padding-vertical) 2rem calc(var(--padding-vertical) + 2rem)
-		3rem;
+		2rem;
 }
 
 .block--dark {
@@ -883,7 +918,7 @@ a {
 	}
 }
 
-/* Block-domain */
+/* Domain Block */
 
 .block-domain {
 	font-size: 2.2rem;
@@ -939,4 +974,12 @@ a {
 		grid-template-columns: repeat(6, 1fr);
 		max-width: 750px;
 	}
+}
+
+/* Plans Block */
+
+.block-plans {
+	align-items: center;
+	gap: 5rem 3rem;
+	justify-items: center;
 }
