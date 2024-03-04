@@ -290,7 +290,8 @@ a {
 	}
 
 	.btn--medium {
-		padding: 2.5 5.8rem;
+		padding-left: 5.8rem;
+		padding-right: 5.8rem;
 	}
 }
 
@@ -878,7 +879,7 @@ a {
 .nav__toggler {
 	opacity: 0.5;
 	margin-right: 1.8rem;
-	transition: opacity 0.2s box-shadow 0.2s;
+	transition: opacity 0.2s;
 }
 
 .nav.collapsible--expanded .nav__toggler {
